@@ -1,6 +1,5 @@
-package com.tomdroid.interview.brightwheelinterview.ui.theme
+package com.tomdroid.interview.brightwheel.common_ui.themes
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "BrightwheelInterview"
 include(":app")
+include(":common-data")
+include(":common-ui")

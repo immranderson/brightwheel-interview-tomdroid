@@ -1,4 +1,4 @@
-package com.tomdroid.interview.brightwheelinterview.ui.theme
+package com.tomdroid.interview.brightwheel.common_ui.themes
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
