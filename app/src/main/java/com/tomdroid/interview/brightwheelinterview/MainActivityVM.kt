@@ -29,13 +29,18 @@ class MainActivityVM @Inject constructor(
             content = emptyList()
         )
     )
+
+    fun setViewState(newViewState: ViewState) {
+        _viewStateFlow.value = newViewState
+    }
+
     fun viewStateFlow(): StateFlow<ViewState> = _viewStateFlow.asStateFlow()
 
     init {
         fetchTopRepositoriesToDisplay()
     }
 
-    private fun fetchTopRepositoriesToDisplay() {
+    fun fetchTopRepositoriesToDisplay() {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
 
@@ -113,23 +118,10 @@ class MainActivityVM @Inject constructor(
                         content = newContentState
                     )
 
-                    _viewStateFlow.value = newViewState
+                    setViewState(newViewState)
 
                 }
 
-            }
-        }
-    }
-
-    fun onSearchPressed() {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-
-                val searchRepositoriesResponse: SearchRepositoriesResponseEntity = searchService.searchRepositories(
-                    query = "stars:>0"
-                )
-
-                println(searchRepositoriesResponse)
             }
         }
     }
@@ -140,7 +132,6 @@ class MainActivityVM @Inject constructor(
         val loading: Boolean = false,
         val content: List<RepoDisplayItem>
     )
-
 
     data class RepoDisplayItem (
         val repoName: String,

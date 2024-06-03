@@ -54,8 +54,8 @@ class MainActivity : ComponentActivity() {
                             LazyColumn {
                                 items(displayItems) {
                                     GithubRepoAccordionComponent(
-                                        repoName = it.repoName,
-                                        topContributor = it.topContributor ?: "UNKNOWN",
+                                        fullRepoName = it.repoName,
+                                        topContributor = it.topContributor,
                                         onFirstExpansion = {
                                             mainVM.onItemExpanded(
                                                 ownerId = it.repoOwner,

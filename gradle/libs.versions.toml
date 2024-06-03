@@ -13,11 +13,15 @@ material = "1.10.0"
 dagger-hilt = "2.51.1"
 retrofit = "2.11.0"
 kotlinxSerializationJson = "1.6.3"
+kotlinxCorountinesTest = "1.8.1"
+mockk = "1.13.11"
+androidxCoreTesting = "2.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-testing-core = { group = "androidx.arch.core", name = "core-testing", version.ref = "androidxCoreTesting" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
@@ -36,6 +40,11 @@ dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", ve
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
 retrofit-converters-kotlinx-serialization = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit"}
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "kotlinxSerializationJson"}
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version = "kotlinxCoroutinesTest"}
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk"}
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk"}
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

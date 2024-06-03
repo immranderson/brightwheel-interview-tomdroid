@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Card
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,8 +24,8 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GithubRepoAccordionComponent(
-    repoName: String,
-    topContributor: String = "Placeholder",
+    fullRepoName: String,
+    topContributor: String? = null,
     onFirstExpansion: () -> Unit
 ) {
 
@@ -66,7 +68,7 @@ fun GithubRepoAccordionComponent(
                     .fillMaxWidth()
                     .height(56.dp)
                     .padding(16.dp),
-                text = repoName,
+                text = fullRepoName,
                 textAlign = TextAlign.Center
             )
 
@@ -76,16 +78,24 @@ fun GithubRepoAccordionComponent(
                     .fillMaxWidth()
                     .wrapContentHeight(),
                     verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally,) {
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
 
-                    Text(
-                        modifier = Modifier
-                            .height(56.dp)
-                            .wrapContentHeight(Alignment.CenterVertically)
-                            .fillMaxWidth(),
-                        text = topContributor,
-                        textAlign = TextAlign.Center
-                    )
+                    if (topContributor == null) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.height(56.dp).width(56.dp)
+                                .wrapContentHeight(Alignment.CenterVertically)
+                        )
+                    } else {
+                        Text(
+                            modifier = Modifier
+                                .height(56.dp)
+                                .wrapContentHeight(Alignment.CenterVertically)
+                                .fillMaxWidth(),
+                            text = topContributor,
+                            textAlign = TextAlign.Center
+                        )
+                    }
 
                 }
 
