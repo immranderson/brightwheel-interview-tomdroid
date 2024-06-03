@@ -8,7 +8,7 @@ data class SearchRepositoriesResponseEntity(
     @SerialName("incomplete_results")
     val incompleteResults: Boolean?,
     @SerialName("items")
-    val items: List<ItemEntity?>?,
+    val items: List<ItemEntity>,
     @SerialName("total_count")
     val totalCount: Int?
 )
@@ -64,7 +64,7 @@ data class ItemEntity(
     @SerialName("forks_url")
     val forksUrl: String?,
     @SerialName("full_name")
-    val fullName: String?,
+    val fullName: String,
     @SerialName("git_commits_url")
     val gitCommitsUrl: String?,
     @SerialName("git_refs_url")
@@ -116,7 +116,7 @@ data class ItemEntity(
     @SerialName("milestones_url")
     val milestonesUrl: String?,
     @SerialName("name")
-    val name: String?,
+    val name: String,
     @SerialName("node_id")
     val nodeId: String?,
     @SerialName("notifications_url")
@@ -126,7 +126,7 @@ data class ItemEntity(
     @SerialName("open_issues_count")
     val openIssuesCount: Int?,
     @SerialName("owner")
-    val owner: Owner?,
+    val owner: Owner,
     @SerialName("private")
     val `private`: Boolean?,
     @SerialName("pulls_url")
@@ -208,7 +208,7 @@ data class Owner(
     @SerialName("id")
     val id: Int?,
     @SerialName("login")
-    val login: String?,
+    val login: String,
     @SerialName("node_id")
     val nodeId: String?,
     @SerialName("organizations_url")
